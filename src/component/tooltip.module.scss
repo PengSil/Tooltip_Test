@@ -1,0 +1,156 @@
+.tooltipContainer {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.851);
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 0;
+  z-index: 100;
+
+  &.pink {
+    background-color: pink;
+    .tooltipText {
+      &:after {
+        border-color: pink transparent transparent transparent !important;
+      }
+    }
+  }
+  &.yellow {
+    background-color: yellow;
+    color: black;
+    .tooltipText {
+      &:after {
+        border-color: yellow transparent transparent transparent !important;
+      }
+    }
+  }
+
+  &.detail {
+    background-color: rgba(0, 0, 0, 0.851);
+    color: rgb(255, 255, 255);
+    bottom: 125% !important;
+    width: auto !important;
+    padding: 10px;
+    transform: translateX(25%);
+    .tooltipText {
+      &:after {
+        border-color: rgba(0, 0, 0, 0.851) transparent transparent transparent !important;
+      }
+    }
+  }
+
+  &.top {
+    bottom: 125%;
+    .tooltipText {
+      &:after {
+        top: 100%; /* 화살표를 툴팁의 아래쪽에 위치 */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.851) transparent transparent transparent;
+      }
+      &.topLeft:after {
+        left: 20%;
+      }
+      &.topRight:after {
+        left: 75%;
+      }
+    }
+  }
+
+  &.bottom {
+    top: 125%;
+    .tooltipText {
+      &:after {
+        bottom: 100%; /* 화살표를 툴팁의 아래쪽에 위치 */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent rgba(0, 0, 0, 0.851) transparent;
+      }
+      &.topLeft:after {
+        left: 20%;
+      }
+      &.topRight:after {
+        left: 75%;
+      }
+    }
+  }
+
+  &.left {
+    left: -110%;
+    top: 50%;
+    transform: translateY(-50%);
+    &.leftTop {
+      top: 0;
+      transform: none;
+    }
+    &.leftBottom {
+      top: auto;
+      bottom: 0;
+      transform: none;
+    }
+    .tooltipText {
+      &:after {
+        top: 50%;
+        right: -10px; /* 삼각형을 텍스트 오른쪽에 배치 */
+        margin-top: -5px; /* 삼각형을 수직 가운데 정렬 */
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent rgba(0, 0, 0, 0.851);
+      }
+      &.leftTop:after {
+        top: 20%;
+      }
+      &.leftBottom:after {
+        top: 75%;
+      }
+    }
+  }
+
+  &.right {
+    right: -110%;
+    top: 50%;
+    transform: translateY(-50%);
+    &.rightTop {
+      top: 0;
+      transform: none;
+    }
+    &.rightBottom {
+      top: auto;
+      bottom: 0;
+      transform: none;
+    }
+    .tooltipText {
+      &::after {
+        top: 50%;
+        left: -10px; /* 삼각형을 텍스트 왼쪽에 배치 */
+        margin-top: -5px; /* 삼각형을 수직 가운데 정렬 */
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent rgba(0, 0, 0, 0.851) transparent transparent;
+      }
+      &.rightTop:after {
+        top: 20%;
+      }
+      &.rightBottom:after {
+        top: 75%;
+      }
+    }
+  }
+}
+.tooltipText {
+  margin-top: -3px;
+  display: flex;
+  flex-direction: column;
+  font-size: 10.5px;
+  text-align: center;
+  vertical-align: text-top;
+  line-height: 17px;
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}

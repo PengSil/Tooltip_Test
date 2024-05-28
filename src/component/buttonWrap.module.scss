@@ -1,0 +1,23 @@
+.top-wrap {
+  display: flex;
+  margin-left: 70px;
+  white-space: nowrap;
+}
+.left-wrap {
+  width: 70px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.right-wrap {
+  width: 70px;
+  margin-left: 290px;
+  display: flex;
+  flex-direction: column;
+}
+.bottom-wrap {
+  display: flex;
+  margin-left: 70px;
+  clear: both;
+  white-space: nowrap;
+}

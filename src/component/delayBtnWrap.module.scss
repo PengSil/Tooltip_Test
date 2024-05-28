@@ -1,0 +1,15 @@
+.top-wrap {
+  display: flex;
+  flex-direction: column;
+  button {
+    width: 150px;
+    display: flex;
+    margin: 10px 0;
+    justify-content: center;
+  }
+  .delayWrap {
+    input {
+      width: 50px;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.test-button {
+  --bc: #1aab8a;
+  background-color: aqua;
+  width: 70px;
+  border-radius: 4px;
+  background: var(--bc);
+  color: #fff;
+  border: none;
+  position: relative;
+  font-size: 15px;
+  padding: 2px 0;
+  margin: 2px 2px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  text-align: center;
+  &.pink {
+    background: pink !important;
+    &:before,
+    &:after {
+      background: pink;
+    }
+    &:hover {
+      background: #fff !important;
+      color: pink;
+    }
+  }
+  &.yellow {
+    color: black;
+    background: rgb(226, 226, 12) !important;
+    &:before,
+    &:after {
+      background: rgb(226, 226, 12);
+    }
+    &:hover {
+      background: #fff !important;
+      color: rgb(226, 226, 12);
+    }
+  }
+  &.black {
+    background: black !important;
+    &:before,
+    &:after {
+      background: black;
+    }
+    &:hover {
+      background: #fff !important;
+      color: black;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: var(--bc);
+    transition: 400ms ease all;
+  }
+  &:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  &:hover {
+    background: #fff;
+    color: var(--bc);
+    &:before,
+    &:after {
+      width: 100%;
+      transition: 800ms ease all;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+.tooltipContainer {
+  position: absolute;
+  width: 250px; /* 툴팁의 최대 너비 설정 */
+  height: auto;
+  background-color: rgba(240, 230, 230, 0.851);
+  color: #1d1b1b;
+  border-radius: 6px;
+  padding: 5px 0;
+  z-index: 1;
+  &.top {
+    bottom: 130%;
+    left: -125%;
+    .tooltipText {
+      &:after {
+        top: 110%; /* 화살표를 툴팁의 아래쪽에 위치 */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.851) transparent transparent transparent;
+      }
+      &.topLeft:after {
+        left: 20%;
+      }
+      &.topRight:after {
+        left: 75%;
+      }
+    }
+  }
+
+  &.bottom {
+    top: 125%;
+    left: -130%;
+    .tooltipText {
+      &:after {
+        bottom: 100%; /* 화살표를 툴팁의 아래쪽에 위치 */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent rgba(0, 0, 0, 0.851) transparent;
+      }
+      &.topLeft:after {
+        left: 20%;
+      }
+      &.topRight:after {
+        left: 75%;
+      }
+    }
+  }
+
+  &.left {
+    left: -370%;
+    top: 50%;
+    transform: translateY(-50%);
+    &.leftTop {
+      top: 0;
+      transform: none;
+    }
+    &.leftBottom {
+      top: auto;
+      bottom: 0;
+      transform: none;
+    }
+    .tooltipText {
+      &:after {
+        top: 50%;
+        right: -10px; /* 삼각형을 텍스트 오른쪽에 배치 */
+        margin-top: -5px; /* 삼각형을 수직 가운데 정렬 */
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent rgba(0, 0, 0, 0.851);
+      }
+      &.leftTop:after {
+        top: 20%;
+      }
+      &.leftBottom:after {
+        top: 75%;
+      }
+    }
+  }
+
+  &.right {
+    right: -370%;
+    top: 50%;
+    transform: translateY(-50%);
+    &.rightTop {
+      top: 0;
+      transform: none;
+    }
+    &.rightBottom {
+      top: auto;
+      bottom: 0;
+      transform: none;
+    }
+    .tooltipText {
+      &::after {
+        top: 50%;
+        left: -10px; /* 삼각형을 텍스트 왼쪽에 배치 */
+        margin-top: -5px; /* 삼각형을 수직 가운데 정렬 */
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent rgba(0, 0, 0, 0.851) transparent transparent;
+      }
+      &.rightTop:after {
+        top: 20%;
+      }
+      &.rightBottom:after {
+        top: 75%;
+      }
+    }
+  }
+}
+
+.tooltipText {
+  margin-top: -3px;
+  display: flex;
+  flex-direction: column;
+  font-size: 10.5px;
+  text-align: center;
+  vertical-align: text-top;
+  line-height: 17px;
+  position: relative;
+  padding: 5px; /* 여백 추가 */
+  white-space: normal; /* 줄 바꿈을 허용 */
+  font-size: 15px;
+  cursor: auto;
+  .wrap {
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    .icon {
+      font-size: 17px;
+    }
+  }
+  .btnWrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+
+  button {
+    border-style: none;
+    background: var(--bc);
+    width: 30px;
+    cursor: pointer;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}

@@ -1,0 +1,44 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+.container-layout {
+  display: flex;
+  background-color: #f3f7fa;
+}
+
+section {
+  width: 100%;
+}
+
+.demo {
+  margin-top: 100px;
+  margin-left: 100px;
+  display: flex;
+}
+
+.parent-overflow {
+  margin-left: 40px;
+  height: 100px;
+  overflow: scroll;
+}
+
+.demo2 {
+  margin-top: 50px;
+  margin-left: 200px;
+}
+
+.demo3 {
+  margin-top: 100px;
+  margin-left: 150px;
+}

@@ -1,0 +1,18 @@
+.top-wrap {
+  margin-left: 70px;
+  white-space: nowrap;
+}
+.left-wrap {
+  width: 70px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.right-wrap {
+  margin-left: 140px;
+}
+.bottom-wrap {
+  margin-left: 70px;
+  clear: both;
+  white-space: nowrap;
+}
