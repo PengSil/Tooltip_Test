@@ -12,6 +12,7 @@
   - CustomTooltip.tsx<br/><br/>
 - BtnWrap 컴포넌트: 버튼들을 래핑하고 보여줍니다.
   - ButtonWrap.tsx
+  - ColorBtnWrap.tsx
   - DelayBtnWrap.tsx
   - DirecionBtnWrap.tsx
   - DisableBtnWrap.tsx<br/><br/>
