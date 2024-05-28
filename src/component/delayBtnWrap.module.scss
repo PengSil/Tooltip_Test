@@ -7,8 +7,11 @@
     margin: 10px 0;
     justify-content: center;
   }
-  .delayWrap {
-    input {
+  .delay-wrap {
+    span {
+      margin-right: 5px;
+    }
+    .delay {
       width: 50px;
     }
   }

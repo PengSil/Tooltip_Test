@@ -10,11 +10,10 @@ interface TooltipProps {
     option?: "delay" | "leaveDelay" | "hoverNotHidden";
     color?: string;
   };
-  color?: string;
   detail?: string | number;
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ tooltipInfo, color, detail }) => {
+const Tooltip: React.FC<TooltipProps> = ({ tooltipInfo, detail }) => {
   return (
     <>
       {tooltipInfo.color && detail ? (

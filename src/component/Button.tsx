@@ -19,7 +19,7 @@ interface TooltipProps {
   tooltipToggle?: boolean;
 }
 
-const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay, noticeTooltip, color, onClick, tooltipToggle }) => {
+const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay = 1, noticeTooltip, color, onClick }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [buttonColor, setButtonColor] = useState(color || "");
@@ -37,7 +37,7 @@ const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay, noticeTooltip, co
     setTimer(
       window.setTimeout(() => {
         setShowTooltip(true);
-      }, 1000)
+      }, delay * 1000)
     );
   };
 
@@ -62,7 +62,7 @@ const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay, noticeTooltip, co
     setTimer(
       window.setTimeout(() => {
         setShowTooltip(false);
-      }, 1000)
+      }, delay * 1000)
     );
   };
 
@@ -83,7 +83,7 @@ const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay, noticeTooltip, co
       setTimer(
         window.setTimeout(() => {
           setShowTooltip(false);
-        }, 1000)
+        }, delay * 1000)
       );
     } else {
       setShowTooltip(false);
