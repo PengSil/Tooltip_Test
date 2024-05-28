@@ -1,6 +1,6 @@
 # Tooltip Component
 
-테라인터내셔널 FE 과제 테스트로 Button과 Tooltip를 TypeScript와 React로 구현한 것입니다.
+테라인터내셔널 FE 과제 테스트로 Button과 Tooltip을 TypeScript와 React로 구현한 것입니다.
 
 ## 구현로직
 
