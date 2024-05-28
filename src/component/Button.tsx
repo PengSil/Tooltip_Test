@@ -16,7 +16,6 @@ interface TooltipProps {
   noticeTooltip?: boolean;
   color?: string;
   onClick?: () => void;
-  tooltipToggle?: boolean;
 }
 
 const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay = 1, noticeTooltip, color, onClick }) => {

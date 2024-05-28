@@ -46,7 +46,7 @@ const DisableBtnWrap: React.FC = () => {
 
   return (
     <div className={styles["top-wrap"]}>
-      <Button tooltipInfos={topInfos} onClick={handleButtonClick} tooltipToggle={tooltipToggle} />
+      <Button tooltipInfos={topInfos} onClick={handleButtonClick} />
       {tooltipToggle ? (
         <>
           <div className={styles.writing} onMouseEnter={handleMouse} onMouseLeave={handleMouseLeave}>
