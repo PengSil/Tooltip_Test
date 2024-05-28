@@ -16,6 +16,7 @@ const DisableBtnWrap: React.FC = () => {
   const [tooltipToggle, setTooltipToggle] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [detail, setDetail] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores atque");
 
   const handleButtonClick = () => {
     if (topInfos.name === "Disable") {
@@ -50,13 +51,13 @@ const DisableBtnWrap: React.FC = () => {
       {tooltipToggle ? (
         <>
           <div className={styles.writing} onMouseEnter={handleMouse} onMouseLeave={handleMouseLeave}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores atque
-            {showTooltip && <Tooltip tooltipInfo={topInfos} detail={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores atque"} />}
+            {detail}
+            {showTooltip && <Tooltip tooltipInfo={topInfos} detail={detail} />}
           </div>
         </>
       ) : (
         <>
-          <div className={styles.writing}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores atque</div>
+          <div className={styles.writing}>{detail}</div>
         </>
       )}
     </div>
