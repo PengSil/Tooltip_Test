@@ -89,6 +89,30 @@ const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay = 1, noticeTooltip
     }
   };
 
+  const hoverNotice = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (timer) {
+      clearTimeout(timer);
+    }
+    setShowTooltip(true);
+  };
+
+  const hoverNoticeLeave = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (tooltipInfos.option === "hoverNotHidden") {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      setTimer(
+        window.setTimeout(() => {
+          setShowTooltip(false);
+        }, 100)
+      );
+    } else {
+      setShowTooltip(false);
+    }
+  };
+
   const buttonStyle = {
     backgroundColor: buttonColor,
   };
@@ -105,15 +129,15 @@ const Button: React.FC<TooltipProps> = ({ tooltipInfos, delay = 1, noticeTooltip
           <div>{tooltipInfos.name}</div>
           {showTooltip && <Tooltip tooltipInfo={tooltipInfos} />}
         </button>
+      ) : noticeTooltip ? (
+        <button className={styles["test-button"]} style={buttonStyle} onMouseEnter={hoverNotice} onMouseLeave={hoverNoticeLeave}>
+          <div>{tooltipInfos.name}</div>
+          {showTooltip && <AnyTooltip tooltipInfo={tooltipInfos} />}
+        </button>
       ) : tooltipInfos.option === "hoverNotHidden" ? (
         <button className={styles["test-button"]} style={buttonStyle} onMouseEnter={hoverDelay} onMouseLeave={hoverDelayLeave}>
           <div>{tooltipInfos.name}</div>
           {showTooltip && <Tooltip tooltipInfo={tooltipInfos} />}
-        </button>
-      ) : noticeTooltip ? (
-        <button className={styles["test-button"]} style={buttonStyle} onMouseEnter={hoverDelay} onMouseLeave={hoverDelayLeave}>
-          <div>{tooltipInfos.name}</div>
-          {showTooltip && <AnyTooltip tooltipInfo={tooltipInfos} />}
         </button>
       ) : tooltipInfos.color && tooltipInfos.direction ? (
         <button className={`${styles["test-button"]} ${styles[tooltipInfos.color]}`} style={buttonStyle} onMouseEnter={hoverDelay} onMouseLeave={hoverDelayLeave}>

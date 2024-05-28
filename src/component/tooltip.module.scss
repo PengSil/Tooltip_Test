@@ -28,10 +28,10 @@
   &.detail {
     background-color: rgba(0, 0, 0, 0.851);
     color: rgb(255, 255, 255);
-    bottom: 125% !important;
+    left: 50%;
+    transform: translateX(-50%);
     width: auto !important;
     padding: 10px;
-    transform: translateX(25%);
     .tooltipText {
       &:after {
         border-color: rgba(0, 0, 0, 0.851) transparent transparent transparent !important;

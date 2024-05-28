@@ -12,6 +12,9 @@ interface TooltipProps {
 }
 
 const AnyTooltip: React.FC<TooltipProps> = ({ tooltipInfo }) => {
+  const handleButtonClick = () => {
+    console.log("버튼 클릭했습니다.");
+  };
   return (
     <div className={`${styles.tooltipContainer} ${styles[tooltipInfo.direction ?? ""]} ${styles[tooltipInfo.position ?? ""]}`}>
       <div className={`${styles.tooltipText} ${styles[tooltipInfo.position ?? ""]}`}>
@@ -20,7 +23,9 @@ const AnyTooltip: React.FC<TooltipProps> = ({ tooltipInfo }) => {
           <span>Are you sure to delete this task?</span>
         </div>
         <div className={styles.btnWrap}>
-          <button className={styles.toogleBtn}>Yes</button>
+          <button className={styles.toogleBtn} onClick={handleButtonClick}>
+            Yes
+          </button>
         </div>
       </div>
     </div>

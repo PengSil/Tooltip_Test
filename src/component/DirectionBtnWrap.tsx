@@ -10,10 +10,10 @@ interface TooltipInfo {
 }
 
 const topInfos: TooltipInfo[] = [
-  { name: "Top", direction: "top" },
-  { name: "Left", direction: "left" },
-  { name: "Right", direction: "right" },
-  { name: "Bottom", direction: "bottom" },
+  { name: "Top", direction: "top", option: "hoverNotHidden" },
+  { name: "Left", direction: "left", option: "hoverNotHidden" },
+  { name: "Right", direction: "right", option: "hoverNotHidden" },
+  { name: "Bottom", direction: "bottom", option: "hoverNotHidden" },
 ];
 
 const DirectionBtnWrap: React.FC = () => {
